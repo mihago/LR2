@@ -508,6 +508,33 @@ int main()
     }
     a[1][1] = new WindWane(5,20);
     MeteoCenter mc3(a);
+    //На строке выше возникает следующая ошибка
+    //
+    //
+// -------------- Build file: "no target" in "no project" (compiler: unknown)---------------
+
+// g++.exe -std=gnu++17  -c "C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp" -o "C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.o"
+// g++.exe  -o "C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.exe" "C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.o"
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp: In function 'int main()':
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:510:22: error: no matching function for call to 'MeteoCenter::MeteoCenter(WindWane* [4][4])'
+//      MeteoCenter mc3(a);
+//                       ^
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:298:5: note: candidate: 'MeteoCenter::MeteoCenter(const WindWane* (*)[4])'
+//      MeteoCenter(const WindWane* a[][KINGDOM_SIZE+1])
+//      ^~~~~~~~~~~
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:298:5: note:   no known conversion for argument 1 from 'WindWane* [4][4]' to 'const WindWane* (*)[4]'
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:275:5: note: candidate: 'MeteoCenter::MeteoCenter(const MeteoCenter&)'
+//      MeteoCenter(const MeteoCenter &meteocenter)
+//      ^~~~~~~~~~~
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:275:5: note:   no known conversion for argument 1 from 'WindWane* [4][4]' to 'const MeteoCenter&'
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:265:5: note: candidate: 'MeteoCenter::MeteoCenter()'
+//      MeteoCenter()
+//      ^~~~~~~~~~~
+// C:\Users\mihag\ВШЭ\2-ой курс\ООП\ЛР2\Square_kingdom.cpp:265:5: note:   candidate expects 0 arguments, 1 provided
+// Process terminated with status 1 (0 minute(s), 0 second(s))
+// 1 error(s), 0 warning(s) (0 minute(s), 0 second(s))
+
+
 
 
 
